@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import './App.css'; // Import your CSS file
+import HomePage from './HomePage'; // Import your HomePage component
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import CreatePostPage from './CreatePostPage'; 
+import { supabase } from './Client';
+import CenterContent from './CenterContent';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const handleCreatePost = async (postData) => {
+    try {
+      const { data, error } = await supabase
+        .from('board_people')
+        .insert([postData]);
+  
+      if (error) {
+        console.error('Error creating post:', error.message);
+      } else {
+        console.log('Post created successfully:', data);
+        // Optionally, redirect or show a success message
+      }
+    } catch (error) {
+      console.error('Error creating post:', error.message);
+    }
+  };
+  
+ 
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    
+    <BrowserRouter>
+    <div className="App">
+      <header className="header">
+        <h1 className='bungee-spice-regular'>Board People</h1>
+        <h2>Community Forum</h2>
+      </header>
+      <div className="container">
+        
+        
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/center" element={<CenterContent handleCreatePost={handleCreatePost} />} />
+        <Route path='/create-post' element={<CreatePostPage handleCreatePost={handleCreatePost} />} />
+      </Routes>
+      
+    
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+    </BrowserRouter>
+
+  );
 }
 
-export default App
+export default App;
+
