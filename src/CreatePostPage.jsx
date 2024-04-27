@@ -2,14 +2,18 @@ import { useState } from 'react';
 import { supabase } from './Client'; // Assuming you have your Supabase client initialized
 import SidebarLeft from './SidebarLeft';
 import SidebarRight from './SidebarRight';
+import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const CreatePostPage = ({handleCreatePost}) => {
+  const navigate = useNavigate()
+  const { user } = useAuth(); 
   const [post, setPost] = useState({
-    author_id: "",
+    author_id: user?.email,
     title: '',
     content: '',
     image_url: '',
-    tags: 'comment', // Default type, can be changed by user
+    tags: 'Comments', // Default type, can be changed by user
   });
 
   const handleInputChange = (e) => {
@@ -28,20 +32,20 @@ const CreatePostPage = ({handleCreatePost}) => {
     await handleCreatePost(postData); // Call handleCreatePost with post data
     // Clear form fields or show success message if needed
     setPost({
-      author_id: '',
+      author_id: user?.email,
       title: '',
       content: '',
       image_url: '',
-      tags: 'comment',
+      tags: 'Comments',
       
     });
+    navigate('/')
   };
 
   
 
   return (
     <div className='create-post'>
-      <SidebarLeft />
     <div className="create-post-card">
       <h1>Create a Post</h1>
       <form onSubmit={handleSubmit}>
@@ -58,14 +62,13 @@ const CreatePostPage = ({handleCreatePost}) => {
 
         <label htmlFor="tags">Tag:</label>
         <select id="tags" name="tags" value={post.tags} onChange={handleInputChange}>
-          <option value="comment">Comment</option>
-          <option value="question">Question</option>
+          <option value="Comments">Comments</option>
+          <option value="Questions">Questions</option>
         </select>
 
         <button type="submit">Create Post</button>
       </form>
     </div>
-    <SidebarRight />
     </div>
   );
 };

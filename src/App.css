@@ -7,10 +7,48 @@ body {
   padding: 0;
 }
 
-.container {
-  max-width: 1400px;
+.App {
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(colorful.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
   
+}
+
+
+
+.container {
+  margin: 20px  0;
+  padding: 20px 0;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.75);
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-page {
+  margin: 0;
+  padding: 0;
+}
+
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: orangered;
+}
+
+.post-card a {
+  font-size: 12px;
 }
 
 .bungee-spice-regular {
@@ -24,6 +62,8 @@ body {
 .center-content h1 {
   font-size: 1.5em;
   text-decoration: underline;
+  color: black;
+  
 }
 
 
@@ -39,19 +79,26 @@ h1, h2, h3 {
   text-align: center;
 }
 
-/* Home page layout styles */
-.home-page, .create-post {
+.create-post, .detail-page {
   display: flex;
   justify-content: space-between;
   margin-top: 0px;
+  min-height: 100vh;
+  flex-grow: 1;
+
 }
+
 
 /* Sidebar styles */
 .sidebar-left,
 .sidebar-right {
   width: 20%;
   padding: 10px;
-  background-color: #cfbbbb;
+  background-color: rgba(141, 133, 133, 0.25);
+  border-radius: 8px;
+  min-height: 100vh;
+  backdrop-filter: blur(5px);
+
 
 }
 
@@ -59,11 +106,14 @@ h1, h2, h3 {
   order: 3; /* Right sidebar appears last */
 }
 
+.sidebar-left a {
+  font-size: 20px;
+}
+
 /* Center content styles */
 .center-content {
-  width: 60%;
+  width: auto;
   padding: 10px;
-  background-color: #fff;
 }
 
 /* Media query for responsive layout */
@@ -89,18 +139,31 @@ h1, h2, h3 {
   transition: transform 0.2s ease-in-out;
 }
 
+.post-detail {
+  width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px auto;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+}
+
 .post-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.post-card h2 {
+.post-card h2, .post-detail h2 {
   margin-bottom: 8px;
   font-size: 18px;
   color: #333;
 }
 
-.post-card p {
+.post-card p, .post-detail p {
   margin-bottom: 4px;
   font-size: 14px;
   color: #666;
@@ -208,4 +271,78 @@ select option {
 .create-post-card p {
   text-align: center;
 }
+
+.second-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Push the second line to the bottom of the card */
+  padding: 10px; /* Adjust padding as needed */
+  background-color: #f0f0f0; /* Optional background color */
+}
+
+.icon-value {
+  display: flex;
+  justify-content: space-between;
+}
+
+.second-line p {
+  margin: 0 3px; /* Adjust margin to make icons and text closer */
+}
+
+.comment-icon,
+.heart-icon,
+.tag-icon {
+  margin: 0 10px; /* Add space between icons */
+}
+
+.detail-content, .comment-content {
+  margin: 20px;
+
+}
+
+.detail-content h1, .comment-content h1 {
+  font-size: 18px;
+}
+
+.comment-modal .modal-content {
+  background-color: #fff; /* Modal background color */
+  border-radius: 10px; /* Rounded corners for the modal */
+}
+
+.comment-modal .modal-header {
+  border-bottom: none; /* Remove border at the bottom of the header */
+}
+
+.comment-modal .modal-footer {
+  border-top: none; /* Remove border at the top of the footer */
+}
+
+.comment-modal .form-control {
+  border-radius: 5px; /* Rounded corners for form controls */
+}
+
+.comment-modal .btn-primary {
+  background-color: #007bff; /* Primary button background color */
+  border-color: #007bff; /* Primary button border color */
+}
+
+.comment-modal .btn-primary:hover {
+  background-color: #0056b3; /* Hover background color */
+  border-color: #0056b3; /* Hover border color */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.button-container button {
+  padding: 5px;
+  font-size: 14px;
+}
+
+
 

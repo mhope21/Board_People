@@ -1,14 +1,12 @@
 import React from 'react';
-import SidebarLeft from './SidebarLeft';
-import SidebarRight from './SidebarRight';
 import CenterContent from './CenterContent';
 
 const HomePage = () => {
   return (
-    <div className="home-page">
-      <SidebarLeft />
+    <div className='home-container'>
+      
       <CenterContent />
-      <SidebarRight />
+      
     </div>
   );
 }

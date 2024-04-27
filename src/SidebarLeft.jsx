@@ -1,17 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TopDeals from './TopDeals';
+import SomeComponent from './SomeComponent';
+import { useAuth } from './AuthContext';
+
 
 const SidebarLeft = () => {
+    const { user, signOut } = useAuth(); 
+    
     return (
         <div className="sidebar-left">
             <ul>
-                <li><a href="/categories">Categories</a></li>
-                <li><a href="/search">Search</a></li>
-                <li><a href="/profile">My Profile</a></li>
-                <li><a href="/notifications">Notifications</a></li>
                 <li><Link to="/">Home</Link></li>
-                {/* Add more links as needed */}
+                {user ? (
+          <li><Link onClick={signOut}>Sign Out</Link></li>
+        ) : null}
+                
             </ul>
+            <SomeComponent/>
+            
+            <TopDeals />
         </div>
     );
 }
