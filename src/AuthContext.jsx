@@ -30,6 +30,7 @@ export const AuthProvider = ({ children }) => {
             setSession(session);
             setUser(session?.user);
             setLoading(false);
+            console.log(session.user);
         });
 
         setData();

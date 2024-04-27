@@ -20,9 +20,7 @@ const LoginForm = () => {
         console.log('Authenticating...');
         setError(null); // Clear any previous errors
         try {
-        //   if (!user) {
-        //     throw new Error('User not authenticated.');
-        // }
+        
           if (isSignUp) {
                 // Perform sign up using Supabase
                 const { error } = await supabase.auth.signUp({
@@ -30,11 +28,13 @@ const LoginForm = () => {
                     password,
                 });
                 if (error) throw error;
+
                 
                 // Insert the username into your Supabase table
                 console.log(email)
                 console.log(password)
                 setUsername(email);
+                
 
                 const { data, insertError } = await supabase
                     .from('user')
@@ -44,7 +44,6 @@ const LoginForm = () => {
                 
                 console.log('User signed up and inserted:', data);
                 alert("You are now signed up. Welcome! Check your email to confirm and return to log in.")
-                login(user);
                 navigate('/')
             } else {
                 // Perform login using Supabase
@@ -57,9 +56,9 @@ const LoginForm = () => {
                 console.log(password)
                 
                 console.log('User logged in:', email);
-                login(user);
-                console.log(user);
-                navigate('/')
+  
+                  // login(user); // Call login function with user data
+                  navigate('/'); // Navigate to the desired page after successful login
             }
         } catch (error) {
             console.error('Authentication error:', error.message);

@@ -7,6 +7,7 @@ import CommentModal from './CommentModal';
 import { Button } from 'react-bootstrap';
 import LikeButton from './LikeButton';
 import { FaRegComment, FaRegHeart, FaFlag, FaRegFolderOpen } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function PostDetail() {
   const { postId } = useParams();
@@ -20,6 +21,8 @@ function PostDetail() {
   const [editedContent, setEditedContent] = useState('');
   const [editMode, setEditMode] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
 
   
@@ -187,6 +190,7 @@ function PostDetail() {
     try {
       await supabase.from('board_people').delete().eq('id', postId);
       // Redirect or update UI after successful deletion
+      navigate('/');
     } catch (error) {
       console.error('Error deleting post:', error);
     }
