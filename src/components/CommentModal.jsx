@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { supabase } from './Client';
-import { useAuth } from './AuthContext';
+import { supabase } from '../Client';
+import { useAuth } from '../AuthContext';
 
 function CommentModal({ postId, show, handleClose, updateComments, handleCommentModalClose }) {
   const {user} = useAuth();

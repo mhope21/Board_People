@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAuth } from './AuthContext'; // Assuming AuthContext is in the same directory
-import { supabase } from './Client';
+import { useAuth } from '../AuthContext'; // Assuming AuthContext is in the same directory
+import { supabase } from '../Client';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 

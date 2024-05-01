@@ -1,10 +1,8 @@
-// Import the necessary dependencies
 import React from 'react';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../AuthContext';
 
-// Define your component
-const SomeComponent = () => {
-  // Use the useAuth hook to access the authentication context
+const UserGreeting = () => {
+  // Use the useAuth hook to get necessary data
   const {session, user} = useAuth();
 
   return (
@@ -14,7 +12,7 @@ const SomeComponent = () => {
                 {user && session.user.email ? (
                     <h5 className="card-title">Hello, {session.user.email}!</h5>
                 ) : (
-                    // Display a message if the user object is not valid
+                    // Display a message if the user and session object is not valid
                     <h5 className="card-title">Hello, Guest!</h5>
                 )}
             </div>
@@ -22,7 +20,7 @@ const SomeComponent = () => {
   );
 };
 
-// Export the component
-export default SomeComponent;
+
+export default UserGreeting;
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap'; // Assuming you're using Bootstrap for layout components
-import './Layout.css'; // Import your CSS file for styling
+import { Container } from 'react-bootstrap';
+import './Layout.css';
 
 const Layout = ({ children }) => {
   return (

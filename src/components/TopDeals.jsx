@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Image } from 'react-bootstrap';
-import {supabase} from './Client';
+import {supabase} from '../Client';
 
 const TopDeals = () => {
   const [deals, setDeals] = useState([]);

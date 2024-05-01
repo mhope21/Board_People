@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { supabase } from './Client'; // Assuming you have your Supabase client initialized
-import SidebarLeft from './SidebarLeft';
-import SidebarRight from './SidebarRight';
-import { useAuth } from './AuthContext';
+import { supabase } from '../Client';
+import SidebarLeft from '../components/SidebarLeft';
+import SidebarRight from '../components/SidebarRight';
+import { useAuth } from '../AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const CreatePostPage = ({handleCreatePost}) => {
@@ -13,7 +13,7 @@ const CreatePostPage = ({handleCreatePost}) => {
     title: '',
     content: '',
     image_url: '',
-    tags: 'Comments', // Default type, can be changed by user
+    tags: 'Comments',
   });
 
   const handleInputChange = (e) => {

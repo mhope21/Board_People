@@ -1,6 +1,6 @@
 // PrivateRoutes.jsx
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from './AuthContext'; // Import your AuthContext hook
+import { useAuth } from '../AuthContext'; // Import your AuthContext hook
 
 const PrivateRoutes = () => {
   const { session, user } = useAuth(); // Use the AuthContext hook to access authentication data

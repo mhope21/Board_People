@@ -1,11 +1,11 @@
 .background-image {
-    background-image: url('boardgame_img4.jpg');
+    background-image: url(./assets/colorful.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: none;
     min-height: 100vh;
     flex-grow: 1;
-    /* Add other styling properties as necessary */
+  
   }
   
   

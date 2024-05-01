@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
-import { supabase } from './Client';
-import PostDetail from './PostDetail';
+import { supabase } from '../Client';
+import PostDetail from '../routes/PostDetail';
 
 function LikeButton({ postId,likeCount, setLikeCount }) {
   

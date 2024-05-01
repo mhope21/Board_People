@@ -1,28 +1,23 @@
 import React, {useState} from 'react';
-import './App.css'; // Import your CSS file
-import HomePage from './HomePage'; // Import your HomePage component
+import './App.css';
+import HomePage from './routes/HomePage';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
-import CreatePostPage from './CreatePostPage'; 
+import CreatePostPage from './routes/CreatePostPage'
 import { supabase } from './Client';
-import CenterContent from './CenterContent';
-import Layout from './Layout';
-import PostDetail from './PostDetail';
+import CenterContent from './components/CenterContent';
+import PostDetail from './routes/PostDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-import SidebarLeft from './SidebarLeft';
-import SidebarRight from './SidebarRight';
-import RecentPosts from './RecentPosts';
-import CommentModal from './CommentModal';
-import FilterPosts from './FilterPosts';
-import LoginForm from './LoginForm';
+import SidebarLeft from './components/SidebarLeft';
+import LoginForm from './routes/LoginForm'
 import { AuthProvider } from './AuthContext';
-import PrivateRoutes from './PrivateRoutes';
-import SomeComponent from './SomeComponent';
+import PrivateRoutes from './components/PrivateRoutes';
+import SidebarRight from './components/SidebarRight';
+import Layout from './Layout';
 
 
 function App() {
    
-
+  {/*Raise handleCreatePost up a level for callback function */}
   const handleCreatePost = async (postData) => {
     try {
       const { data, error } = await supabase
@@ -43,6 +38,8 @@ function App() {
  
 
   return (
+    <>
+    {/* Wrap app in AuthProvider so that all components have access to user state */}
     <AuthProvider>
     <Router> 
      
@@ -51,11 +48,11 @@ function App() {
         <h1 className='bungee-spice-regular'>Board People</h1>
         <h2>Community Forum</h2>
       </header>
-      
+      <Layout>
       <div className='container'>
       <SidebarLeft/> 
       
-                   
+      {/* Create routes for app and private routes for authentication */}          
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/center" element={<CenterContent handleCreatePost={handleCreatePost} />} />
@@ -67,10 +64,15 @@ function App() {
       </Routes>  
       <SidebarRight/>
       </div>
+      </Layout>
     </div>
     
+    
     </Router>
+  
     </AuthProvider>
+    </>
+  
     
 
   );

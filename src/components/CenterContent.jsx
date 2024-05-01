@@ -4,7 +4,7 @@ import FilterPosts from './FilterPosts';
 import { FaPlus } from 'react-icons/fa';
 import RecentPosts from './RecentPosts';
 import { Link } from 'react-router-dom';
-import { supabase } from './Client';
+import { supabase } from '../Client';
 
 const CenterContent = ({ handleCreatePost }) => {
   const [selectedFilter, setSelectedFilter] = useState('');

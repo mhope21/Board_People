@@ -1,5 +1,5 @@
 import React from 'react';
-import CenterContent from './CenterContent';
+import CenterContent from '../components/CenterContent';
 
 const HomePage = () => {
   return (

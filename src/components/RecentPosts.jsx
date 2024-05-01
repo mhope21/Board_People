@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from './Client'; // Import your Supabase client
+import { supabase } from '../Client'; // Import your Supabase client
 import { FaRegComment, FaRegHeart, FaFlag, FaRegFolderOpen } from 'react-icons/fa';
-import PostDetail from './PostDetail';
+import PostDetail from '../routes/PostDetail';
 import { Link } from 'react-router-dom';
 
 const RecentPosts = ({posts, selectedFilter, isFiltered}) => {

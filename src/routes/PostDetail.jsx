@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { supabase } from './Client';
-import SidebarLeft from './SidebarLeft';
-import SidebarRight from './SidebarRight';
-import CommentModal from './CommentModal';
+import { supabase } from '../Client';
+import SidebarLeft from '../components/SidebarLeft';
+import SidebarRight from '../components/SidebarRight';
+import CommentModal from '../components/CommentModal';
 import { Button } from 'react-bootstrap';
-import LikeButton from './LikeButton';
+import LikeButton from '../components/LikeButton';
 import { FaRegComment, FaRegHeart, FaFlag, FaRegFolderOpen } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
