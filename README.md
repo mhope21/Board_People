@@ -15,9 +15,6 @@ Board People is a dynamic community forum designed for board game enthusiasts to
 - **Comments**: Users can leave comments on any post, fostering interactive discussions.
 - **Upvoting**: Each post page includes an upvote button, allowing users to increase a post's upvote count. Users can upvote multiple times, contributing to the content's popularity.
 - **Post Editing and Deletion**: Users can edit or delete their own posts directly from the post page.
-
-### Optional Features:
-
 - **Random User ID**: Each user is assigned a random user ID upon launch, linking it to their posts and comments for identification.
 - **Flagging and Filtering**: Posts can be flagged during creation, and users can filter the home feed based on flags for more focused content browsing.
 - **Image Upload**: Users can upload images directly from their local machine for more engaging posts.
