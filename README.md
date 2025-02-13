@@ -1,42 +1,43 @@
-# Web Development Final Project - *Board People Community Forum*
+# Board People Community Forum
 
-Submitted by: **Marcia Hope**
+**Developed by:** Marcia Hope  
 
-This web app: **This is a forum for board game lovers to share their thoughts and ask questions.**
+**Overview:**  
+Board People is a dynamic community forum designed for board game enthusiasts to connect, share their thoughts, ask questions, and engage in discussions. This platform offers a place for users to create posts, leave comments, upvote content, and personalize their experience within the community. With a focus on intuitive design and real-time interaction, Board People fosters lively discussions around board games.
 
-Time spent: **50** hours spent in total
+## Key Features
 
-## Required Features
+- **Create Posts**: Users can easily create posts with a title, optional textual content, and an external image via a URL.
+- **Home Feed**: A feed displaying all posts with essential details such as the creation time, title, and number of upvotes.
+- **Post Sorting**: Users can sort posts by either creation time or upvote count, helping them discover popular discussions or recent content.
+- **Post Search**: A search bar is available for users to search for posts by title.
+- **Post Detail Page**: Clicking a post redirects users to a detailed page where they can view all the content associated with that post.
+- **Comments**: Users can leave comments on any post, fostering interactive discussions.
+- **Upvoting**: Each post page includes an upvote button, allowing users to increase a post's upvote count. Users can upvote multiple times, contributing to the content's popularity.
+- **Post Editing and Deletion**: Users can edit or delete their own posts directly from the post page.
 
-The following **required** functionality is completed:
+### Optional Features:
 
-- [ x] **A create form that allows the user to create posts**
-- [x ] **Posts have a title and optionally additional textual content and/or an image added as an external image URL**
-- [ x] **A home feed displaying previously created posts**
-- [ x] **By default, the time created, title, and number of upvotes for each post is shown on the feed**
-- [x ] **Clicking on a post shall direct the user to a new page for the selected post**
-- [ ] **Users can sort posts by either their created time or upvotes count**
-- [ ] **Users can search for posts by title**
-- [x ] **A separate post page for each created post, where any additional information is shown is linked whenever a user clicks a post**
-- [x ] **Users can leave comments underneath a post on the post's separate page**
-- [x ] **Each post should have an upvote button on the post's page. Each click increases its upvotes count by one and users can upvote any number of times**
-- [ x] **A previously created post can be edited or deleted from its post page**
+- **Random User ID**: Each user is assigned a random user ID upon launch, linking it to their posts and comments for identification.
+- **Flagging and Filtering**: Posts can be flagged during creation, and users can filter the home feed based on flags for more focused content browsing.
+- **Image Upload**: Users can upload images directly from their local machine for more engaging posts.
 
-The following **optional** features are implemented:
+### Additional Enhancements:
 
-- [ ] Users can only edit and deleted posts or delete comments by entering the secret key, which is set by the user during post creation
-- [ ] Upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them.
-- [ ] Users can repost a previous post by referencing its post ID. On the post page of the new post, the referenced post is displayed and linked, creating a thread
-- [ ] Users can customize the interface of the web app
-- [ ] Users can share and view web videos
-- [ x] Users can set flags while creating a post. Then users can filter posts by flags on the home feed.
-- [ ] Users can upload images directly from their local machine as an image file
-- [ ] Display a loading animation whenever data is being fetched
+- **User Authentication**: Added **Supabase authentication** and integrated **React AuthContext** for login, logout, and signup functionality.
+- **Private Routes**: Restricted access to post creation and commenting features to authenticated users, ensuring that only logged-in users can interact with posts in these ways.
+  
+## Tools and Technologies Used
 
-The following **additional** features are implemented:
+- **Frontend:** React, React Router, and CSS for the interactive user interface.
+- **Backend:** Supabase for authentication and data management, making it easy to manage posts, users, and interactions.
+- **State Management:** React Context and useReducer for managing user authentication and post data state.
+- **Deployment:** Hosted on Netlify for seamless deployment and high performance.
 
-* [x ] List anything else that you added to improve the site's functionality!
-* I added login, logout, signup functionality using Supabase authentication and React AuthContext. I set private routes so that a user would be required to sign in if they want to create a post or comment on a post.
+### Conclusion:
+
+Board People is a fully functional, interactive forum that combines user engagement, content sharing, and customization in a modern web environment. Whether you're a casual board gamer or a seasoned enthusiast, this platform provides a space to connect, share, and explore board games with fellow enthusiasts.
+
 
 ## Video Walkthrough
 
@@ -48,23 +49,3 @@ Here's a walkthrough of implemented user stories:
 GIF created with ...  
 [ScreenToGif](https://www.screentogif.com/) for Windows
 
-
-## Notes
-
-This app killed me. The styling, the number of components, the routes, the props, the authentication. I am literally dead right now. I think I killed ChatGPT, too. But, I learned so much.
-
-## License
-
-    Copyright [yyyy] [name of copyright owner]
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
